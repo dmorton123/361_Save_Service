@@ -11,9 +11,9 @@ communication contract: To save the main program sends a JSON containing data to
 
 example save:
 ```
-SAVE_SERVICE_URL = http://localhost:5000
+SAVE_SERVICE_URL = "http://localhost:5000"
 SERVICE_TIMEOUT = 5
-example_dict = {"health":50, "name": Joe, "age": 53, location: "Oregon"}
+example_dict = {"health":50, "name": "Joe", "age": 53, location: "Oregon"}
 response = requests.post(f"{SAVE_SERVICE_URL}/save", json={"data": example_dict, "filename": "example_name"}, timeout=SERVICE_TIMEOUT)
 result = response.json() #turns the json that was returned from the service into a python dict
 print(f"Result message: {result.get('message', 'No message in response')}") #this would print the "message" portion of the response
