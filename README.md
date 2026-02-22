@@ -1,6 +1,15 @@
-361 Save Service
+## 361 Save Service
 Group 33 David and Lauren
 
+## Communication Contract 
+We will communicate primarily through Teams.
+We will respond to messages within 24 hours, even if it’s just “I see this and have no objectives”.
+If a team member has been unresponsive, we will check in over email or on Canvas.
+We will be polite and willing to listen to each other, and focus on finding solutions to problems instead of arguing.
+We will minimize unspoken assumptions about classwork. In particular, we will prioritize communication about our personal intents for completing assignment work and expectations from the other team member.
+If a team member is concerned they will not be able to complete their work by the deadline, reach out to team members for help at least 24 hours before the deadline.
+
+## Micro-service Description
 This service handles saving and loading data so that a session can be ended and picked up later from the same spot it uses Flask and REST API to communicate. It defaults to running on http://localhost:5000. 
 
 pip install -r requirements.txt
