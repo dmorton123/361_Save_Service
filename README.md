@@ -41,17 +41,17 @@ UML Diagram:
          Main Program                         Save Microservice
                 |                                        |
                 |---- POST /save (data, filename) ------>|
-                |                                        |
+                |                                        | save_game()
                 |<--- JSON {success, message, path} -----|
                 |                                        |
                 |                                        |
                 |---- GET /list-saves ------------------>|
-                |                                        |
+                |                                        | list_saves()
                 |<--- JSON {success, saves[]} -----------|
                 |                                        |
                 |                                        |
                 |---- GET /load/{filename} ------------->|
-                |                                        |
+                |                                        |load_game(filename)
                 |<--- JSON {success, data} --------------|
                 |                                        |
 ## Contributions
