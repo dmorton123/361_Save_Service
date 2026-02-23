@@ -54,4 +54,6 @@ UML Diagram:
                 |                                        |
                 |<--- JSON {success, data} --------------|
                 |                                        |
+## Contributions
+README and save_microservice.py created by David and edited by Lauren. Test.py created by Lauren. 
 
