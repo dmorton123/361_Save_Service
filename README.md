@@ -16,7 +16,8 @@ pip install -r requirements.txt
 
 It is recommended that you import requests in your main program to help communicate with the service.
 
-communication contract: To save the main program sends a JSON containing data to the save service using a POST request, the save service creates a "saves" folder and puts a file with a name of the users choosing in that folder with the given information. The service also returns a json (which can be converted into a dictionary when received) with the sections "success" which will be either True or False, "message" which contains a short message about the status of the save, and filepath which is the filepath to the new file. To load information the main program requests a JSON using a GET request and a filename, the service sends back a JSON with the sections "success" which will be true or false and "data" which contains the data within the save file.
+### Detailed Description
+To save, the main program sends a JSON containing data to the save service using a POST request. Then the save service creates a "saves" folder, and puts a file (with a name of the users choosing) in that folder with the given information. The service also returns a json (which can be converted into a dictionary when received), with the following sections: "success" which will be either True or False, "message" which contains a short message about the status of the save, and "filepath" which is the filepath to the new file. To load information, the main program requests a JSON by sending a GET request and a filename. The service returns a JSON with the sections "success", which will be true or false, and "data", which contains the data within the save file.
 
 example save:
 ```
