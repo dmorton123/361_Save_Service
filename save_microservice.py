@@ -13,6 +13,12 @@ app = Flask(__name__)
 SAVE_DIR = Path(__file__).parent / "saves"
 SAVE_DIR.mkdir(exist_ok=True)
 
+def error_response(e, status=500):
+    return jsonify({
+        "success": False,
+        "error": str(e)
+    }), status
+
 @app.route('/save', methods=['POST'])
 def save_game():
     """
@@ -48,10 +54,7 @@ def save_game():
         }), 200
         
     except Exception as e:
-        return jsonify({
-            "success": False,
-            "error": str(e)
-        }), 500
+        return error_response(e, 500)
 
 @app.route('/load/<filename>', methods=['GET'])
 def load_game(filename):
@@ -64,7 +67,6 @@ def load_game(filename):
     try:
         filepath = SAVE_DIR / filename
         
-        # Check if file exists
         if not filepath.exists():
             return jsonify({
                 "success": False,
@@ -81,10 +83,7 @@ def load_game(filename):
         }), 200
 
     except Exception as e:
-        return jsonify({
-            "success": False,
-            "error": str(e)
-        }), 500
+        return error_response(e, 500)
 
 @app.route('/list-saves', methods=['GET'])
 def list_saves():
@@ -102,13 +101,9 @@ def list_saves():
         }), 200
         
     except Exception as e:
-        return jsonify({
-            "success": False,
-            "error": str(e)
-        }), 500
+        return error_response(e, 500)
 
 if __name__ == '__main__':
     print(f"Save Microservice running on http://localhost:5000")
     print(f"Saves directory: {SAVE_DIR.absolute()}")
     app.run(debug=False, host='localhost', port=5000)
-
